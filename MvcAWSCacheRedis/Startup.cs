@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MvcAWSCacheRedis.Helpers;
 using MvcAWSCacheRedis.Repositories;
+using MvcAWSCacheRedis.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,8 +26,10 @@ namespace MvcAWSCacheRedis
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
             services.AddSingleton<PathProvider>();
             services.AddTransient<RepositoryProductos>();
+            services.AddTransient<ServiceCacheAWS>();
             services.AddControllersWithViews();
         }
 
