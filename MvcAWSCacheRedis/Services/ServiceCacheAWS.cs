@@ -22,7 +22,7 @@ namespace MvcAWSCacheRedis.Services
         public void AddProductoCache(Producto producto) 
         {
             List<Producto> productos;
-            string json = this.cache.StringGet("producytoscache");
+            string json = this.cache.StringGet("productoscache");
             if (json == null)
             {
                 productos = new List<Producto>();
